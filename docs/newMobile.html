@@ -117,6 +117,35 @@
             align-items: center;
         }
     </style>
+    <script>
+        function adjustSizes() {
+            var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+            if (screenWidth >= 1280) {
+                // Desktop screen size
+                document.documentElement.style.setProperty('--font-size-1', '1.6vw');
+                document.documentElement.style.setProperty('--font-size-2', '2vw');
+                document.documentElement.style.setProperty('--font-size-3', '3vw');
+                document.documentElement.style.setProperty('--font-size-4', '4vw');
+                document.documentElement.style.setProperty('--font-size-6', '6vw');
+                document.documentElement.style.setProperty('--font-size-10', '10vw');
+            } else {
+                // Mobile or smaller screen size
+                document.documentElement.style.setProperty('--font-size-1', '2vw');
+                document.documentElement.style.setProperty('--font-size-2', '3vw');
+                document.documentElement.style.setProperty('--font-size-3', '4vw');
+                document.documentElement.style.setProperty('--font-size-4', '6vw');
+                document.documentElement.style.setProperty('--font-size-6', '8vw');
+                document.documentElement.style.setProperty('--font-size-10', '12vw');
+            }
+        }
+
+        // Adjust sizes initially
+        adjustSizes();
+
+        // Adjust sizes on window resize
+        window.addEventListener('resize', adjustSizes);
+    </script>
 </head>
 <body>
     <div class="topnav">
