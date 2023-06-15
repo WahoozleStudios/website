@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mobile Device Detection</title>
+  <script type="text/javascript">
+    function isMobileDevice() {
+      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+
+    function launchMobileCode() {
+      // Code to be executed on mobile devices
+      var mobileContent = document.getElementById('mobile-content');
+      mobileContent.style.display = 'block';
+    }
+
+    function launchDesktopCode() {
+      // Code to be executed on desktop devices
+      var desktopContent = document.getElementById('desktop-content');
+      desktopContent.style.display = 'block';
+    }
+
+    window.onload = function() {
+      if (isMobileDevice()) {
+        launchMobileCode();
+      } else {
+        launchDesktopCode();
+      }
+    };
+  </script>
+</head>
+<body>
+  <div id="mobile-content" style="display: none;">
+    <h1>Mobile</h1>
+    <h1>Welcome to the Mobile Version</h1>
+    <p>This content is only visible on mobile devices.</p>
+  </div>
+
+  <div id="desktop-content" style="display: none;">
+    <h1>Desktop</h1>
+    <h1>Welcome to the Desktop Version</h1>
+    <p>This content is only visible on desktop devices.</p>
+  </div>
+</body>
+</html>
